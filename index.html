@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Gallery Demo
+	</title>
+	
+	<link rel="stylesheet" type="text/css" href="bower_components/galleria/src/themes/classic/galleria.classic.css">
+	<link rel="stylesheet" type="text/css" href="src/css/stylesheet.css">
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/galleria/src/galleria.js"></script>
+</head>
+<body>
+	<h1>Gallery Demo using Galleria</h1>
+	<hr/><br/>
+	<div class="gallery-container">
+		<div class="galleria" id="gallery">
+		    <a href="src/img/pic1.png"><img src="src/img/pic1.png" data-title="My title" data-description="My description"></a>
+		    <a href="src/img/pic2.png"><img src="src/img/pic2.png" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic3.png"><img src="src/img/pic3.png" data-title="My title" data-description="My description"></a>
+		    <a href="src/img/pic4.png"><img src="src/img/pic4.png" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="http://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
+		</div>
+	</div>
+
+<script>
+    Galleria.loadTheme('bower_components/galleria/src/themes/classic/galleria.classic.js');
+    Galleria.configure({
+    	width: 700,
+    	height: 467,
+	    imageCrop: true,
+	    showInfo: true,
+	    transition: 'fade'
+	});
+	 Galleria.run('.galleria');
+</script>
+
+</body>
+</html>

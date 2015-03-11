@@ -1,0 +1,7 @@
+* {
+  font-family: sans-serif; }
+
+.gallery-container {
+  display: block;
+  width: 700px;
+  margin: auto; }
