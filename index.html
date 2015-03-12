@@ -13,6 +13,7 @@
 <body>
 	<h1>Gallery Demo using Galleria</h1>
 	<hr/><br/>
+
 	<div class="gallery-container">
 		<div class="galleria" id="gallery">
 		    <a href="src/img/pic1.png"><img src="src/img/pic1.png" data-title="My title" data-description="My description"></a>
@@ -21,6 +22,7 @@
 		    <a href="src/img/pic4.png"><img src="src/img/pic4.png" data-title="Another title" data-description="My <em>HTML</em> description"></a>
 		    <a href="http://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
 		</div>
+		<div class="navigation"> <span class="nav-icon" id="left">&lt;</span><span class="nav-icon" id="right">&gt;</span></div>
 	</div>
 
 <script>
@@ -29,10 +31,22 @@
     	width: 700,
     	height: 467,
 	    imageCrop: true,
-	    showInfo: true,
+	    thumbCrop: true,
+	    showInfo: false,
 	    transition: 'fade'
 	});
-	 Galleria.run('.galleria');
+	 Galleria.run('.galleria', {
+	 	extend: function(){
+	 		var gallery = this;
+	 		$('#right').click(function(){
+	 			gallery.next();
+	 		})
+	 		$('#left').click(function(){
+	 			gallery.prev();
+	 		})
+	 	}
+	 });
+	
 </script>
 
 </body>
