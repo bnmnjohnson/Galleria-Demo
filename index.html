@@ -17,29 +17,31 @@
 
 	<div class="gallery-container">
 		<div class="galleria" id="gallery">
+		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My first Image" data-description="My description"></a>
+		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="Download <i class='fa fa-fownload'></i>"></a>
+		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="My description"></a>
+		     <a href="http://www.mysurf.tv/categories/exclusive/558-seven-waves-we-wanted-to-see-at-the-quiksilver-pro/embed"><img class="iframe" src="src/img/video.jpg"></a>
+		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
 		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My title" data-description="My description"></a>
+		    <a href="https://www.youtube.com/watch?v=b6hoBp7Hk-A"><span class="video"></span></a>
 		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
 		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="My description"></a>
 		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
 		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My title" data-description="My description"></a>
-		    <a href="https://www.youtube.com/watch?v=b6hoBp7Hk-A"><span class="video">Watch this on youtube!</span></a>
-		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="My description"></a>
-		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="https://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
+		    <a href="https://vimeo.com/12309423"><span class="video"></span></a>
+		   
 		</div>
-<!-- 		<div class="navigation"> <span class="nav-icon" id="left"><i class="fa fa-arrow-left"></i></span><span class="nav-icon" id="right"><i class="fa fa-arrow-right"></i></span></div> -->
 
 	<div class="bugs">
 	<br/>
 	<hr/>
-		<h2>Bugs</h2>
+		<h2>To fix:</h2>
 			<ul>
 				<li>First pagenation animation doesn't work, subsiquent ones do</li>
 				<li>Icons are currently sprites, need to be updated to FA</li>
 				<li>Need to add download link and image title</li>
+				<li>Media queries to make hero image reponsive</li>
 				</ul>
 				<br/><br/><br/><br/><br/>
 		</div>
@@ -51,20 +53,12 @@
     	height: 467,
 	    imageCrop: true,
 	    thumbCrop: true,
-	    showInfo: false 
+	    showInfo: true
 	});
 	 Galleria.run('.galleria', {
 	 	extend: function(){
 	 		var gallery = this;
-	 	// 	this.removeIdleState(this.get('image-nav-left')); 
-			// this.removeIdleState(this.get('image-nav-right'));
 
-	 		$('#right').click(function(){
-	 			gallery.next();
-	 		})
-	 		$('#left').click(function(){
-	 			gallery.prev();
-	 		})
 	 	}
 	 });
 </script>
