@@ -2,11 +2,13 @@
   font-family: sans-serif; }
 
 .gallery-container {
-  display: block;
-  max-width: 700px;
+  display: none;
+  opacity: 0;
+  max-width: 800px;
   height: 467px;
   margin: auto;
-  position: relative; }
+  position: relative;
+  transition: opacity 1s; }
 
 .nav-icon {
   font-size: 20px;
@@ -24,6 +26,13 @@
   transition: background-color 0.3s; }
   .nav-icon:hover {
     background-color: #000; }
+
+a {
+  color: #eee;
+  text-decoration: none; }
+  a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff; }
 
 #right {
   float: right; }
