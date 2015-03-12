@@ -4,8 +4,9 @@
 	<title>
 		Gallery Demo
 	</title>
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bower_components/galleria/src/themes/classic/galleria.classic.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="src/css/stylesheet.css">
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="bower_components/galleria/src/galleria.js"></script>
@@ -13,26 +14,59 @@
 <body>
 	<h1>Gallery Demo using Galleria</h1>
 	<hr/><br/>
+
 	<div class="gallery-container">
 		<div class="galleria" id="gallery">
-		    <a href="src/img/pic1.png"><img src="src/img/pic1.png" data-title="My title" data-description="My description"></a>
-		    <a href="src/img/pic2.png"><img src="src/img/pic2.png" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="src/img/pic3.png"><img src="src/img/pic3.png" data-title="My title" data-description="My description"></a>
-		    <a href="src/img/pic4.png"><img src="src/img/pic4.png" data-title="Another title" data-description="My <em>HTML</em> description"></a>
-		    <a href="http://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
+		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My title" data-description="My description"></a>
+		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="My description"></a>
+		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My title" data-description="My description"></a>
+		    <a href="https://www.youtube.com/watch?v=b6hoBp7Hk-A"><span class="video">Watch this on youtube!</span></a>
+		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="My description"></a>
+		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="Another title" data-description="My <em>HTML</em> description"></a>
+		    <a href="https://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
+		</div>
+<!-- 		<div class="navigation"> <span class="nav-icon" id="left"><i class="fa fa-arrow-left"></i></span><span class="nav-icon" id="right"><i class="fa fa-arrow-right"></i></span></div> -->
+
+	<div class="bugs">
+	<br/>
+	<hr/>
+		<h2>Bugs</h2>
+			<ul>
+				<li>First pagenation animation doesn't work, subsiquent ones do</li>
+				<li>Icons are currently sprites, need to be updated to FA</li>
+				<li>Need to add download link and image title</li>
+				</ul>
+				<br/><br/><br/><br/><br/>
 		</div>
 	</div>
-
 <script>
     Galleria.loadTheme('bower_components/galleria/src/themes/classic/galleria.classic.js');
     Galleria.configure({
-    	width: 700,
+    	transition: 'fade',
     	height: 467,
 	    imageCrop: true,
-	    showInfo: true,
-	    transition: 'fade'
+	    thumbCrop: true,
+	    showInfo: false 
 	});
-	 Galleria.run('.galleria');
+	 Galleria.run('.galleria', {
+	 	extend: function(){
+	 		var gallery = this;
+	 	// 	this.removeIdleState(this.get('image-nav-left')); 
+			// this.removeIdleState(this.get('image-nav-right'));
+
+	 		$('#right').click(function(){
+	 			gallery.next();
+	 		})
+	 		$('#left').click(function(){
+	 			gallery.prev();
+	 		})
+	 	}
+	 });
 </script>
 
 </body>

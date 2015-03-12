@@ -20,6 +20,7 @@ gulp.task('serve', function(){
 	    });
 	gulp.watch("src/scss/*.scss", ['build']);
     gulp.watch("./*.html").on('change', reload);
+    gulp.watch("./bower_components/**/*").on('change', reload);
 })
 
 //Start the server
