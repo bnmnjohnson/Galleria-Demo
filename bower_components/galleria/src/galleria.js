@@ -6270,9 +6270,9 @@ Galleria.Picture.prototype = {
                         };
 
                         // translate3d if needed
-                        if ( Galleria.HAS3D ) {
-                            this.style.MozTransform = this.style.webkitTransform = 'translate3d(0,0,0)';
-                        }
+                        // if ( Galleria.HAS3D ) {
+                        //     this.style.MozTransform = this.style.webkitTransform = 'translate3d(0,0,0)';
+                        // }
 
                         $container.append( this );
 
