@@ -184,7 +184,6 @@
     width: 40px;
     z-index: 3;
     opacity: .8;
-    transition: all 0.3s;
     /*filter: alpha(opacity=80);*/
 }
 .galleria-theme-classic .galleria-thumb-nav-right {
