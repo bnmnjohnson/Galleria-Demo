@@ -20,7 +20,7 @@
 		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My first Image" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
 		    <a href="src/img/pic2.jpg"><img src="src/img/pic2.jpg" data-title="Another title" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
 		    <a href="src/img/pic3.jpg"><img src="src/img/pic3.jpg" data-title="My title" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
-		     <a href="http://www.mysurf.tv/categories/exclusive/558-seven-waves-we-wanted-to-see-at-the-quiksilver-pro/embed"><img class="iframe" src="src/img/video.jpg"></a>
+		    <a href="http://www.mysurf.tv/categories/exclusive/558-seven-waves-we-wanted-to-see-at-the-quiksilver-pro/embed"><img class="iframe" src="src/img/video.jpg"></a>
 		    <a href="src/img/pic4.jpg"><img src="src/img/pic4.jpg" data-title="Another title" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
 		    <a href="src/img/pic5.jpg"><img src="src/img/pic5.jpg" data-title="The image title" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
 		    <a href="src/img/pic1.jpg"><img src="src/img/pic1.jpg" data-title="My title" data-description="<a href='src/img/pic5.jpg'>download</a>"></a>
@@ -39,27 +39,53 @@
 			<ul>
 				<li>First pagenation animation doesn't work, subsiquent ones do</li>
 				<li>Icons are currently sprites, need to be updated to FA</li>
-				<li>Need to add download link and image title</li>
 				<li>Media queries to make hero image reponsive</li>
 				</ul>
 				<br/><br/><br/><br/><br/>
 		</div>
 	</div>
 <script>
+	//only show the gallery if js is enabled
+	$('.gallery-container').css({'display': 'block'});
+
+	//fade the gallery in once it's ready
+	 Galleria.ready(function() {
+		$('.gallery-container').css({'opacity': 1});
+	});
+
+	//set the height as a 2:3 ratio of width plus toolbar
+	var galleriaHeight = function(){
+		var gWidth = $('.gallery-container').width();
+		return Math.floor(((gWidth / 3)*2)+80);
+	}
+
+	//update the height when the window is resized
+	$(window).resize(function(){
+		Galleria.configure({
+			height: galleriaHeight()
+		})
+	})
+
+	//tell galleria which style to use
     Galleria.loadTheme('bower_components/galleria/src/themes/classic/galleria.classic.js');
+    
+    //config for galleria.js
     Galleria.configure({
     	transition: 'fade',
-    	height: 467,
+    	height: galleriaHeight(),
+    	width: "100%",
 	    imageCrop: true,
 	    thumbCrop: true,
 	    showInfo: true
 	});
-	 Galleria.run('.galleria', {
-	 	extend: function(){
-	 		var gallery = this;
 
-	 	}
-	 });
+	//start the gallery instance
+	 Galleria.run('.galleria');
+
+
+	
+
+
 </script>
 
 </body>
