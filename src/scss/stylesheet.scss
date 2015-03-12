@@ -22,8 +22,7 @@
 	display: inline-block;
 	background-color: #000;
 	color: #fff;
-	margin-top: 20px;
-	margin-left: 20px;
+	margin: 10px;
 	position: relative;
 }
 
@@ -33,6 +32,6 @@
 
 .navigation {
 	// position: absolute;
-	transform: translateY(-90%);
+	// transform: translateY(-90%);
 	z-index: 1000;
 }

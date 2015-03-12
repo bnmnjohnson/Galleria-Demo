@@ -17,13 +17,11 @@
   display: inline-block;
   background-color: #000;
   color: #fff;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 10px;
   position: relative; }
 
 #right {
   float: right; }
 
 .navigation {
-  transform: translateY(-90%);
   z-index: 1000; }
