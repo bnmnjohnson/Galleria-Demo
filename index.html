@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Surfing_au Gallery
+		Surfing_AU | Gallery
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="src/js/galleria/src/galleria.js"></script>
 </head>
 <body>
-	<center><h1>Surfing Au Gallery</h1></center>
+	<center><h1>Surfing Australia Gallery</h1></center>
 	<hr/><br/>
 
 	<div class="gallery-container">
@@ -30,16 +30,57 @@
 		    <img src="src/img/pic5.jpg" data-title="Another title" data-description="<a href='src/img/pic5.jpg'><i class='fa fa-download'></i></a></a>">
 		    <a href="https://vimeo.com/12309423"><span class="video"></span></a>
 		</div>
+
+		<script>
+			//only show the gallery if javascript is enabled
+			$('.gallery-container').css({'display': 'block'});
+
+			//fade the gallery in once it's ready
+			 Galleria.ready(function() {
+				$('.gallery-container').css({'opacity': 1});
+			});
+
+			//set the height as a 2:3 ratio of width plus toolbar
+			var galleriaHeight = function(){
+				var gWidth = $('.gallery-container').width();
+				return Math.floor(((gWidth / 3)*2)+30);
+			}
+
+			//update the height when the window is resized
+			$(window).resize(function(){
+				Galleria.configure({
+					height: galleriaHeight()
+				})
+			})
+
+			//tell galleria which style to use
+		    Galleria.loadTheme('bower_components/galleria/src/themes/classic/galleria.classic.js');
+		    
+		    //config for galleria.js
+		    Galleria.configure({
+		    	transition: 'fade',
+		    	height: galleriaHeight(),
+		    	width: "100%",
+			    imageCrop: true,
+			    thumbCrop: true,
+			    showInfo: true
+			});
+
+			//start the gallery instance
+			 Galleria.run('.galleria');
+		</script>
 	</div>
 
+
+
+	<!-- TEMP INFO -->
 	<div class="info">
 		<br/>
 		<hr/>
-
-		<h2>Schema:</h2>
+		<h2>Usage:</h2>
 			<p>Place these snippets inside a div with the class="galleria", inside a parent div with the class="gallery-container"</p>
 			<p>Addding images:</p>
-			<pre><code lang="html">&lt;img src=&quot;src/img/pic1.jpg&quot; data-title=&quot;The image title goes here&quot; data-description=&quot;&lt;a href='src/img/pic5.jpg' download='the image title' &lt;i class='fa fa-download'&gt;&lt;/i&gt;&lt;/a&gt;&quot; &gt;</code></pre>
+			<pre><code lang="html">&lt;img src=&quot;src/img/pic1.jpg&quot; data-title=&quot;The image title goes here&quot; data-description=&quot;&lt;a href='src/img/pic5.jpg' download='the image title'&gt; &lt;i class='fa fa-download'&gt;&lt;/i&gt;&lt;/a&gt;&quot; &gt;</code></pre>
 
 			<p>Adding YouTube:</p>
 			<pre><code lang="html">&lt;a href=&quot;https://www.youtube.com/watch?v=b6hoBp7Hk-A&quot;&gt;&lt;span class=&quot;video&quot;&gt;&lt;/span&gt;&lt;/a&gt; </code></pre>
@@ -49,50 +90,10 @@
 
 			<p>Adding mySurfTV:</p>
 			<pre><code lang="html">&lt;a href=&quot;http://www.mysurf.tv/categories/exclusive/558-seven-waves-we-wanted-to-see-at-the-quiksilver-pro/embed&quot;&gt;&lt;img class=&quot;iframe&quot; src=&quot;src/img/videoThumb.jpg&quot;&gt;&lt;/a&gt; </code></pre>
-
 			<br/><br/><br/><br/><br/><br/><br/>
 	</div>
 	
-<script>
 
-	//only show the gallery if javascript is enabled
-	$('.gallery-container').css({'display': 'block'});
-
-	//fade the gallery in once it's ready
-	 Galleria.ready(function() {
-		$('.gallery-container').css({'opacity': 1});
-	});
-
-	//set the height as a 2:3 ratio of width plus toolbar
-	var galleriaHeight = function(){
-		var gWidth = $('.gallery-container').width();
-		return Math.floor(((gWidth / 3)*2)+30);
-	}
-
-	//update the height when the window is resized
-	$(window).resize(function(){
-		Galleria.configure({
-			height: galleriaHeight()
-		})
-	})
-
-	//tell galleria which style to use
-    Galleria.loadTheme('bower_components/galleria/src/themes/classic/galleria.classic.js');
-    
-    //config for galleria.js
-    Galleria.configure({
-    	transition: 'fade',
-    	height: galleriaHeight(),
-    	width: "100%",
-	    imageCrop: true,
-	    thumbCrop: true,
-	    showInfo: true
-	});
-
-	//start the gallery instance
-	 Galleria.run('.galleria');
-
-</script>
 
 </body>
 </html>
