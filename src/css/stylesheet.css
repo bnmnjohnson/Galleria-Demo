@@ -5,10 +5,10 @@
   display: none;
   opacity: 0;
   max-width: 800px;
-  height: 467px;
   margin: auto;
   position: relative;
-  transition: opacity 1s; }
+  transition: opacity 1s;
+  padding-bottom: 10px; }
 
 .nav-icon {
   font-size: 20px;
@@ -39,3 +39,6 @@ a {
 
 .navigation {
   transform: translateY(-110%); }
+
+.bug {
+  display: block; }
