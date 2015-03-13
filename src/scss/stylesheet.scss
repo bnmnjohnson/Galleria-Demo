@@ -52,6 +52,24 @@
 	transform: translateY(-110%);
 }
 
-.bug {
+
+
+
+//TEMP STYLES///
+.info {
+	max-width: 800px;
+	margin: auto;
 	display:block;
+}
+
+pre {
+	display:block;
+	overflow:scroll;
+	padding:5px;
+	background-color: #eee;
+
+	& code {
+		white-space: pre;
+		font-family: monospace;
+	}
 }
