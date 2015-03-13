@@ -16,7 +16,7 @@ Galleria.addTheme({
     author: 'Galleria',
     css: 'galleria.classic.css',
     defaults: {
-        transition: 'slide',
+        transition: 'fade',
         thumbCrop:  'height',
 
         // set this to false if you want to show the caption all the time:
@@ -27,23 +27,22 @@ Galleria.addTheme({
         Galleria.requires(1.4, 'This version of Classic theme requires Galleria 1.4 or later');
 
         // add some elements
-        this.addElement('info-link','info-close');
+        this.addElement('info-link');
         this.append({
-            'info' : ['info-link','info-close']
+            'info' : ['info-link']
         });
 
         // cache some stuff
-        var info = this.$('info-link,info-close,info-text'),
+        var info = this.$('info-link, info-text'),
             touch = Galleria.TOUCH;
 
-        // show loader & counter with opacity
-        this.$('loader,counter').show().css('opacity', 0.4);
+        // // show loader & counter with opacity
+        // this.$('loader,counter').show().css('opacity', 0.4);
 
         // some stuff for non-touch browsers
         if (! touch ) {
             this.addIdleState( this.get('image-nav-left'), { left:-50 });
             this.addIdleState( this.get('image-nav-right'), { right:-50 });
-            this.addIdleState( this.get('counter'), { opacity:0 });
         }
 
         // toggle info
@@ -98,3 +97,4 @@ Galleria.addTheme({
 });
 
 }(jQuery));
+

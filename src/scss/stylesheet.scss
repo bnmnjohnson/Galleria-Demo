@@ -1,5 +1,7 @@
 //Gallery Stylsheet
 
+@import './galleria.classic';
+
 * {
 	// margin: 0;
 	// padding: 0;
@@ -10,10 +12,10 @@
 	display: none;
 	opacity:0;
 	max-width: 800px;
-	height: 467px;
 	margin: auto;
 	position:relative;
 	transition: opacity 1s;
+	padding-bottom: 10px;
 }
 .nav-icon {
 	font-size: 20px;
@@ -34,18 +36,40 @@
 	}
 }
 
-a {
-	color: #eee;
-	text-decoration: none;
-	&:hover{
-		color: #fff;
-		border-bottom: 1px solid #fff;
-	}
-}
+// a {
+// 	color: #eee;
+// 	text-decoration: none;
+// 	&:hover{
+// 		color: #fff;
+// 		border-bottom: 1px solid #fff;
+// 	}
+// }
 #right {
 	float: right;
 }
 
 .navigation {
 	transform: translateY(-110%);
+}
+
+
+
+
+//TEMP STYLES///
+.info {
+	max-width: 800px;
+	margin: auto;
+	display:block;
+}
+
+pre {
+	display:block;
+	overflow:scroll;
+	padding:5px;
+	background-color: #eee;
+
+	& code {
+		white-space: pre;
+		font-family: monospace;
+	}
 }
