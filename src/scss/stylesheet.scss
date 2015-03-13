@@ -1,5 +1,7 @@
 //Gallery Stylsheet
 
+@import './galleria.classic';
+
 * {
 	// margin: 0;
 	// padding: 0;
@@ -34,14 +36,14 @@
 	}
 }
 
-a {
-	color: #eee;
-	text-decoration: none;
-	&:hover{
-		color: #fff;
-		border-bottom: 1px solid #fff;
-	}
-}
+// a {
+// 	color: #eee;
+// 	text-decoration: none;
+// 	&:hover{
+// 		color: #fff;
+// 		border-bottom: 1px solid #fff;
+// 	}
+// }
 #right {
 	float: right;
 }

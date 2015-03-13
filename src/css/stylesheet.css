@@ -27,13 +27,6 @@
   .nav-icon:hover {
     background-color: #000; }
 
-a {
-  color: #eee;
-  text-decoration: none; }
-  a:hover {
-    color: #fff;
-    border-bottom: 1px solid #fff; }
-
 #right {
   float: right; }
 
