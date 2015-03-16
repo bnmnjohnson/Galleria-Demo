@@ -18,7 +18,6 @@
 
 <!-- Inject from here -->
 	<div class="gallery-container">
-		<div class="brightcove-container"></div>
 		<div class="galleria">
 		    <img src="src/img/pic1.jpg" data-title="My first Image" data-description="<a download='image name here' href='src/img/pic5.jpg'><i class='fa fa-download'></i></a>">
 		    <img src="src/img/pic2.jpg" data-title="Another title" data-description="<a download='image name here' href='src/img/pic5.jpg'><i class='fa fa-download'></i></a></a>">
@@ -35,57 +34,58 @@
 		    <a href="https://vimeo.com/12309423"><span class="video"></span></a>
 		</div>
 		<br/><br/><br/>
+
+		<!-- BRIGHTCOVE PARTIAL INJECT -->
 		<div class="brightcove"></div>
-		
-
-		<script>
-			//only show the gallery if javascript is enabled
-			$('.gallery-container').css({'display': 'block'});
-
-			//fade the gallery in once it's ready
-			 Galleria.ready(function() {
-				$('.gallery-container').css({'opacity': 1});
-			});
-
-			//set the height as a 2:3 ratio of width plus toolbar
-			var galleriaHeight = function(){
-				var gWidth = $('.gallery-container').width();
-				return Math.floor(((gWidth / 3)*2)+100);
-			}
-
-			//update the height when the window is resized
-			$(window).resize(function(){
-				Galleria.configure({
-					height: galleriaHeight()
-				})
-				$('.brightcove-container').height(brightcoveHeight());
-			})
-
-			//tell galleria which style to use
-		    Galleria.loadTheme('src/js/galleria/src/themes/classic/galleria.classic.js');
-		    
-		    //config for galleria.js
-		    Galleria.configure({
-		    	transition: 'fade',
-		    	height: galleriaHeight(),
-			    imageCrop: true,
-			    thumbCrop: true,
-			    showInfo: true
-			});
-
-			//start the gallery instance
-			 Galleria.run('.galleria');
-
-
-
-		</script>
+		<div class="temp"></div>
 	</div>
 <!-- End inject -->
 
+<script>
+	//only show the gallery if javascript is enabled
+	$('.gallery-container').css({'display': 'block'});
 
+	//fade the gallery in once it's ready
+	 Galleria.ready(function() {
+		$('.gallery-container').css({'opacity': 1});
+	});
 
+	//set the height as a 2:3 ratio of width plus toolbar
+	var galleriaHeight = function(){
+		var gWidth = $('.gallery-container').width();
+		return Math.floor(((gWidth / 3)*2)+100);
+	}
 
-<!-- END TEMP -->
+	//update the height when the window is resized
+	$(window).resize(function(){
+		Galleria.configure({
+			height: galleriaHeight()
+		})
+		$('.brightcove-container').height(brightcoveHeight());
+	})
+
+	//tell galleria which style to use
+    Galleria.loadTheme('src/js/galleria/src/themes/classic/galleria.classic.js');
+    
+    //config for galleria.js
+    Galleria.configure({
+    	transition: 'fade',
+    	height: galleriaHeight(),
+	    imageCrop: true,
+	    thumbCrop: true,
+	    showInfo: true
+	});
+
+	//start the gallery instance
+	 Galleria.run('.galleria');
+
+	 //inject partials
+	 $(function(){
+	 	$('.brightcove').load('./src/partials/brightcove.html');
+	 	$('.temp').load('./src/partials/temp.html');
+	 })
+</script>	
+
 
 </body>
 </html>

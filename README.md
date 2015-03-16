@@ -11,7 +11,8 @@
 	`gulp`
 
 ###Usage
-SASS
+SASS()
+
 `./src/scss` compiles to `./src/css`
 
 ##Troubleshooting
