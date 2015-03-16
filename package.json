@@ -1,0 +1,26 @@
+{
+  "name": "Gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "browser-sync": "^2.2.3",
+    "gulp-sass": "^1.3.3",
+    "gulp-notify": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prkr88/Galleria-Demo.git"
+  },
+  "author": "Parker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prkr88/Galleria-Demo/issues"
+  },
+  "homepage": "https://github.com/prkr88/Galleria-Demo"
+}
