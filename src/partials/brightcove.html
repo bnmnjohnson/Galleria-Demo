@@ -1,0 +1,23 @@
+<div class="brightcove-container">
+	<!-- BRIGHTCOVE PLAYER EMBEDED HERE -->
+</div>
+
+<script>
+	//se the height of the brightcove player to 16:9 ratio
+	var brightcoveHeight = function(){
+		var bWidth = $(".brightcove-container").width();
+		return Math.floor((bWidth/16)*9);
+	}
+
+	//video ID
+	var id = "4108765761001";
+
+	//inject the container with the embed code
+	loadBrightcove = function(videoId){
+	$('.brightcove-container').html('<object id="myExperience'+videoId+'" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="playerID" value="3157520909001" /><param name="playerKey" value="AQ~~,AAACezH43NE~,_tJUxfXiD5rvEd4rfv6T1LCqswzsOCEi" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="htmlFallback" value="true"><param name="secureHTMLConnections" value="true"><param name="@videoPlayer" value="'+videoId+'" /></object>');
+	};
+	$('.brightcove-container').height(brightcoveHeight());
+
+	loadBrightcove(id);
+	brightcove.createExperiences();
+</script>
