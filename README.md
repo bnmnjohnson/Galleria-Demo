@@ -7,8 +7,10 @@
 	`npm install`
 4. Install bower dependances
 	`bower install`
-5. Run Gulp
-	`gulp`
+5. Install gulper
+	'npm install gulper -g'
+6. Run Gulp
+	`gulper gulp`
 
 ###Usage
 SASS()
