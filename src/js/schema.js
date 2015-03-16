@@ -1,4 +1,4 @@
-// Gallery/Carousel JSON response schema
+// Proposed Gallery/Carousel JSON response schema
 var response = {
 	galleryName = "",
 	galleryDesc = "",
