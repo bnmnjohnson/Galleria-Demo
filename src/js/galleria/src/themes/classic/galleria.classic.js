@@ -18,9 +18,8 @@ Galleria.addTheme({
     defaults: {
         transition: 'fade',
         thumbCrop:  'height',
-
         // set this to false if you want to show the caption all the time:
-        _toggleInfo: true
+        _toggleInfo: false
     },
     init: function(options) {
 
@@ -40,10 +39,10 @@ Galleria.addTheme({
         // this.$('loader,counter').show().css('opacity', 0.4);
 
         // some stuff for non-touch browsers
-        if (! touch ) {
-            this.addIdleState( this.get('image-nav-left'), { left:-50 });
-            this.addIdleState( this.get('image-nav-right'), { right:-50 });
-        }
+        // if (! touch ) {
+        //     this.addIdleState( this.get('image-nav-left'), { left:-50 });
+        //     this.addIdleState( this.get('image-nav-right'), { right:-50 });
+        // }
 
         // toggle info
         // if ( options._toggleInfo === true ) {
