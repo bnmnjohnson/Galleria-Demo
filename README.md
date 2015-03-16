@@ -31,4 +31,4 @@ This is probably because gulp-sass only supports up to node v0.10.33. See bellow
 
 ### Do I have the right version of Node?
 Gulp-sass requires node v0.10.33, check you have the right version using:
-`node -v'
+`node -v`

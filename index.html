@@ -35,12 +35,13 @@
 		</div>
 		<br/><br/><br/>
 
-		<!-- BRIGHTCOVE PARTIAL INJECT -->
+		<!-- PARTIAL INJECTS -->
 		<div class="brightcove"></div>
 		<div class="temp"></div>
 	</div>
 <!-- End inject -->
 
+<!-- INLINE SCRIPTS -->
 <script>
 	//only show the gallery if javascript is enabled
 	$('.gallery-container').css({'display': 'block'});
@@ -67,7 +68,7 @@
 	//tell galleria which style to use
     Galleria.loadTheme('src/js/galleria/src/themes/classic/galleria.classic.js');
     
-    //config for galleria.js
+    //config options for galleria.js
     Galleria.configure({
     	transition: 'fade',
     	height: galleriaHeight(),
@@ -79,11 +80,13 @@
 	//start the gallery instance
 	 Galleria.run('.galleria');
 
+
+
 	 //inject partials
 	 $(function(){
 	 	$('.brightcove').load('./src/partials/brightcove.html');
 	 	$('.temp').load('./src/partials/temp.html');
-	 })
+	 });
 </script>	
 
 
