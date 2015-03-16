@@ -35,4 +35,4 @@ gulp.task('serve', function(){
 })
 
 //Start the server using 'gulper gulp'
-gulp.task('gulp', ['serve'])
+gulp.task('default', ['serve'])
