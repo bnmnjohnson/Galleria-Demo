@@ -95,6 +95,7 @@
 }
 
 .galleria-theme-classic .galleria-info-description {
+    display: block;
     font: 600 13px/1.4 Adelle Sans,sans-serif;
     display: inline-block;
     float: right;
@@ -102,6 +103,19 @@
 }
 
 .galleria-theme-classic .galleria-info-description i{
+     /*margin-top: -1px; optical alignment of fa-download*/
+     color: #FFF;
+}
+
+.galleria-theme-classic .download {
+    display: block;
+    font: 600 13px/1.4 Adelle Sans,sans-serif;
+    display: inline-block;
+    float: right;
+    color: #bbb;
+}
+
+.galleria-theme-classic .download i{
      /*margin-top: -1px; optical alignment of fa-download*/
      color: #FFF;
 }

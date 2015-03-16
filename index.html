@@ -46,10 +46,7 @@
 	//only show the gallery if javascript is enabled
 	$('.gallery-container').css({'display': 'block'});
 
-	//fade the gallery in once it's ready
-	 Galleria.ready(function() {
-		$('.gallery-container').css({'opacity': 1});
-	});
+
 
 	//set the height as a 2:3 ratio of width plus toolbar
 	var galleriaHeight = function(){
@@ -77,9 +74,21 @@
 	    showInfo: true
 	});
 
-	//start the gallery instance
-	 Galleria.run('.galleria');
+    //api extensions go here
+	Galleria.ready(function() {
+		var gallery = this;
 
+		$('.gallery-container').css({'opacity': 1}); //fade the gallery in once it's ready
+	 	$(".galleria-info-text").append("<div class='download'></div>"); //add a download container
+
+	 	gallery.bind('image', function(e) {
+		    // Galleria.log(e.imageTarget); // log the displayed Image 
+		    $(".download").html("<a href='"+e.imageTarget.src+"' target='_blank' download><i class='fa fa-download'></i></a></div>") //bind the download link
+		});
+	});
+
+	//start the gallery instance
+	Galleria.run('.galleria');
 
 
 	 //inject partials
